@@ -9,17 +9,18 @@
   </head>
   <body>
     <div class="container">
-        <div class="col-6 mx-auto">
+        <div class="col col-md-6 mx-auto">
             <h1 class="mb-5 text-center">Kamat számítás</h1>
-            <form class="mb-3">
+            <form class="mb-3" onsubmit="return evesKamatSzamolas()">
               <div class="form-floating mb-3">
                 <input
                   type="number"
                   class="form-control"
-                  id="floatingInput"
+                  id="betet"
                   placeholder="Betét"
+                  required
                 />
-                <label for="floatingInput">Betét</label>
+                <label for="betet">Betét</label>
               </div>
       
               <div class="input-group mb-4">
@@ -27,10 +28,11 @@
                   <input
                     type="number"
                     class="form-control"
-                    id="floatingInput"
+                    id="nevleges"
                     placeholder="Névleges kamat"
+                    required
                   />
-                  <label for="floatingInput">Névleges kamat</label>
+                  <label for="nevleges">Névleges kamat</label>
                 </div>
                 <span class="input-group-text">%</span>
               </div>
@@ -39,23 +41,25 @@
                 <input
                   type="number"
                   class="form-control"
-                  id="floatingInput"
+                  id="tokesitesekSzama"
                   placeholder="Évenkénti tőkésítések száma"
+                  required
                 />
-                <label for="floatingInput">Évenkénti tőkésítések száma</label>
+                <label for="tokesitesekSzama">Évenkénti tőkésítések száma</label>
               </div>
       
-              <button type="reset" class="btn btn-primary">Számolás</button>
+              <button type="submit" class="btn btn-primary" id="szamolasBtn">Számolás</button>
             </form>
       
             <fieldset disabled>
                 <div class="mb-3">
-                  <label for="kamatEredmeny" class="form-label">Tényleges éves kamat:</label>
+                  <label for="evesKamat" class="form-label">Tényleges éves kamat:</label>
                   <input
                     type="number"
-                    id="kamatEredmeny"
+                    id="evesKamat"
                     class="form-control"
                     placeholder="Tényleges éves kamat"
+                    title=""
                   />
                 </div>
             </fieldset>
